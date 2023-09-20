@@ -2,10 +2,11 @@ package ex2;
 
 import java.util.ArrayList;
 
-public class ThisIsTheEnd {
-	private final ArrayList<Thread> ths = new ArrayList();
+public class HelloThreadJoin{
+	private final ArrayList<Thread> ths = new ArrayList<>();
 	
 	public void newThread(int value){
+		@SuppressWarnings("preview")
 		var th = Thread.ofPlatform().name("Hello "+ value + " ").start(()->{
 			for(var i=0;i < 5000;i++) {
 				System.out.println(Thread.currentThread().getName()+ i);
@@ -15,7 +16,7 @@ public class ThisIsTheEnd {
 	}
 	
 	public static void main(String[] args){
-		var th = new ThisIsTheEnd();
+		var th = new HelloThreadJoin();
 		for(var i=0;i<4;i++) {
 			th.newThread(i);
 		}

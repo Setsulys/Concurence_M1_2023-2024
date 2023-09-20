@@ -2,6 +2,7 @@ package ex3;
 
 public class TurtleRace{
 
+	@SuppressWarnings("preview")
 	public static void main(String[] args) throws InterruptedException {
 		  System.out.println("On your mark!");
 		  Thread.sleep(30_000);
@@ -15,7 +16,7 @@ public class TurtleRace{
 					Thread.sleep(times[j]);
 					System.out.println(Thread.currentThread().getName() + " has finished");
 				} catch (InterruptedException e) {
-					return;
+					throw new AssertionError(e);
 				}
 			  });
 		  }
