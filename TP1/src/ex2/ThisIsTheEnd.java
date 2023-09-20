@@ -6,9 +6,9 @@ public class ThisIsTheEnd {
 	private final ArrayList<Thread> ths = new ArrayList();
 	
 	public void newThread(int value){
-		var th = Thread.ofPlatform().start(()->{
+		var th = Thread.ofPlatform().name("Hello "+ value + " ").start(()->{
 			for(var i=0;i < 5000;i++) {
-				System.out.println("Hello "+ value + " "+ i);
+				System.out.println(Thread.currentThread().getName()+ i);
 			}
 		});
 		ths.add(th);

@@ -12,9 +12,9 @@ public class HelloThreadBis {
 	}
 	
 	public void newThread(int value) {
-		Thread.ofPlatform().start(()->{
+		Thread.ofPlatform().name("Hello " + value + " ").start(()->{
 			for(var i=0;i < 5000;i++) {
-				var str = "Hello " + value + " " + i;
+				var str = Thread.currentThread().getName() + i;
 				HelloThreadBis.println(str);
 			}
 		});

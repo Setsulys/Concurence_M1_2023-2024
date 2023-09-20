@@ -4,9 +4,9 @@ package ex1;
 public class HelloThread {
 
 	public void newThread(int value) {
-		Thread.ofPlatform().start(()->{
+		Thread.ofPlatform().name("Hello "+ value + " ").start(()->{
 			for(var i=0;i < 5000;i++) {
-				System.out.println("Hello "+ value + " "+ i);
+				System.out.println( Thread.currentThread().getName() + i);
 			}
 		});
 	}
