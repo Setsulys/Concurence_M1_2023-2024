@@ -1,6 +1,5 @@
 package ex1;
 
-import java.util.Iterator;
 
 public class HelloThread {
 
