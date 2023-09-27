@@ -10,7 +10,7 @@ public class StopThreadBug implements Runnable {
     @Override
     public void run() {
         while (!stop) {
-            System.out.println("Up");
+            //System.out.println("Up");
         }
         System.out.print("Done");
     }
@@ -32,7 +32,7 @@ public class StopThreadBug implements Runnable {
  * Il n'y a pas de changement entre les executions.
  * 
  * 3 Modifiez la classe StopThreadBug.java pour supprimer l'affichage dans la boucle du thread. Exécuter la classe à nouveau plusieurs fois. Essayez d'expliquer ce comportement.
- * 
+ * Lorsque l'on commente la ligne (ligne 13) le programme ne s'arrete pas car l'optimisation de JIT ne passe pas dans la boucle while et fini pas le programme
  * 
  * 4 Le code avec l'affichage va-t-il toujours finir par arrêter le thread ?
  * System.Out.Println() rechargera la RAM, donc on reverifiera la valeur de stop. Ce qui fera arreter le thread.

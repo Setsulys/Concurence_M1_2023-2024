@@ -31,7 +31,7 @@ public class HelloListBug {
 
 /**
  *  2 Exécuter le programme plusieurs fois et noter les différents affichages
- *  Cela affiche une valeur se situant entre 6_000 et 8_000
+ *  Cela affiche une valeur différente a chaque execution (pour ma part entre 6000 et 8000)
  *  
  *  3 Expliquer comment la taille de la liste peut être plus petite que le nombre total d'appels à la méthode add.
  *  Il est possible que dans le cache, il ai eu des problème d'acces à la mémoire, comme on est en lecture écriture sur le tas, il y a des effets de bords de cette non atmicité
