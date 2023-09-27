@@ -3,7 +3,6 @@ package ex1;
 
 public class HelloThread {
 
-	@SuppressWarnings("preview")
 	public void newThread(int value) {
 		Thread.ofPlatform().start(()->{
 			for(var i=0;i < 5000;i++) {

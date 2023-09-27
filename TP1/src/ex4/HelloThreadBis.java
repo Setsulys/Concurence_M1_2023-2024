@@ -9,7 +9,6 @@ public class HelloThreadBis {
     System.out.print("\n");
   }
 
-  @SuppressWarnings("preview")
 public static void main(String[] args) {
     int nbThreads = 5;
 

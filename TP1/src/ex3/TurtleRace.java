@@ -2,7 +2,6 @@ package ex3;
 
 public class TurtleRace{
 
-	@SuppressWarnings("preview")
 	public static void main(String[] args) throws InterruptedException {
 		  System.out.println("On your mark!");
 		  Thread.sleep(30_000);

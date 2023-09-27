@@ -11,7 +11,6 @@ public class HelloThreadBis2 {
 	  System.out.print("\n");
 	}
 	
-	@SuppressWarnings("preview")
 	public void newThread(int value) {
 		Thread.ofPlatform().name("Hello " + value + " ").start(()->{
 			for(var i=0;i < 5000;i++) {
