@@ -1,4 +1,4 @@
-package ex4;
+package ex1;
 
 import java.util.Objects;
 
@@ -13,31 +13,33 @@ public class RendezVous<V> {
     Objects.requireNonNull(value);
     synchronized(lock) {
     	this.value = value;
+    	lock.notify();
     }
   }
   
   public V get() throws InterruptedException {
-	
+	synchronized(lock) {
 		while(value == null) {
-			synchronized(lock) {
         	//Thread.sleep(1);  // then comment this line !
-			}
+			lock.wait();
     	}
 		return value;
+	}
 	
   }
   
   public static void main(String[] args) throws InterruptedException {
-    RendezVous<String> rendezVous = new RendezVous<>();
-    Thread.ofPlatform().start(() -> {
-      try {
-        Thread.sleep(5000);
-      } catch (InterruptedException e) {
-        throw new AssertionError(e);
-      }
-      rendezVous.set("hello");
-    });
-    
-    System.out.println(rendezVous.get());
-  }
+	    var rdv = new RendezVous<String>();
+	    Thread.ofPlatform().start(() -> {
+	      try {
+	        Thread.sleep(20_000);
+	        rdv.set("Message");
+	      } catch (InterruptedException e) {
+	        throw new AssertionError(e);
+	      }
+	    });
+	    System.out.println(rdv.get());
+	  }
+  
+  
 }
