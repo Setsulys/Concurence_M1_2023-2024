@@ -17,12 +17,13 @@ public class RendezVous<V> {
   }
   
   public V get() throws InterruptedException {
-	synchronized(lock) {
+	
 		while(value == null) {
+			synchronized(lock) {
         	//Thread.sleep(1);  // then comment this line !
+			}
     	}
 		return value;
-	}
 	
   }
   
