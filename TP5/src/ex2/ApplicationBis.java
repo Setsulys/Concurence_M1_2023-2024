@@ -5,7 +5,7 @@ import java.util.List;
 public class ApplicationBis {
 	public static void main(String[] args) throws InterruptedException {
 		var rooms = List.of("bedroom1", "bedroom2", "kitchen", "dining-room", "bathroom", "toilets");
-		var h4j = new Heat4JThreadSafe(rooms.size());
+		var h4j = new Heat4JThreadSafeBetter(rooms.size());
 		for(var i=0;i<rooms.size();i++) {
 			var j =i;
 			Thread.ofPlatform().start(() ->{
@@ -20,8 +20,10 @@ public class ApplicationBis {
 			});
 		}
 		for(;;) {
+			Thread.sleep(100);
 			System.out.println(h4j.getAverageTemperature());
 		}
 		
 	}
 }
+

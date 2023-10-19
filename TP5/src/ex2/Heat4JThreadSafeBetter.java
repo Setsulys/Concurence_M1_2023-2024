@@ -3,19 +3,27 @@ package ex2;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Heat4JThreadSafe {
+public class Heat4JThreadSafeBetter {
 
 	private final Object lock = new Object();
 	private final Map<String,Integer> temp;
 	private final int roomNumber;
+	private State state;
 	
-	public Heat4JThreadSafe(int numberOfRooms) {
+	enum State{
+		FIRST,
+		WAIT,
+		DONE
+	}
+	
+	public Heat4JThreadSafeBetter(int numberOfRooms) {
 		if(numberOfRooms <0) {
 			throw new IllegalArgumentException();
 		}
 		synchronized(lock) {
 			temp = new HashMap<>();
-			roomNumber = numberOfRooms;	
+			roomNumber = numberOfRooms;
+			state = State.FIRST;
 		}
 
 	}
@@ -23,7 +31,6 @@ public class Heat4JThreadSafe {
 	public int retrieveTemperature(String roomName) throws InterruptedException {
 		var roomTemp = Heat4J.retrieveTemperature(roomName);
 		synchronized (lock) {
-			
 			temp.put(roomName,roomTemp);
 			if(temp.size() == roomNumber) {
 				lock.notify();

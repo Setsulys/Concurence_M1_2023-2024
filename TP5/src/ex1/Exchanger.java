@@ -3,28 +3,30 @@ package ex1;
 public class Exchanger<T> {
 
 	private T value;
-	private State state = State.WAITING;
+	private State state = State.READY;
 	private final Object lock = new Object();
 
 	enum State{
-		BEGIN,
-		WAITING
+		THEN,
+		READY,
+		FINISHED
 	}
 
 	public T exchange(T newValue) throws InterruptedException {
 		synchronized (lock) {
-			if(state != State.BEGIN) {
+			if(state != State.THEN) { //State is State.READY
 				value = newValue;
-				state = State.BEGIN;
-				while(state ==State.BEGIN) {
+				state = State.THEN;
+				while(state ==State.THEN) {
 					lock.wait();
 				}
+				state = State.READY;
 				return value;
 			}
 			else {
 				var tmp = value;
 				value = newValue;
-				state = State.WAITING;
+				state = State.FINISHED;
 				lock.notify();
 				return tmp;
 			}
