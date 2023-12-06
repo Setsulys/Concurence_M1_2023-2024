@@ -21,7 +21,7 @@ public class RandomNumberGenerator {
     	newValue ^= newValue<<25;
     	newValue ^= newValue>>>27;
     	if(x.compareAndSet(current, newValue)){
-    		return current*2685821657736338717L;
+    		return newValue*2685821657736338717L;
     	}
     }
   }
