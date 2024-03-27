@@ -1,0 +1,28 @@
+package fr.uge.exo3;
+
+import java.util.concurrent.ArrayBlockingQueue;
+
+public class BankProcessor {
+
+	public static void main(String[] args) {
+		int transfert =3;
+		int suspisious =2;
+		var checkTransfert = new ArrayBlockingQueue<>(10);
+		
+		for(var i =0; i < transfert; i++) {
+			Thread.ofPlatform().start(()->{
+				try {
+					Banco.retrieveWireTransfer();
+				} catch (InterruptedException e) {
+					throw new AssertionError(e);
+				}
+			});
+		}
+		for(var i =0; i < suspisious; i++) {
+			Thread.ofPlatform().start(()->{});
+		}
+		for(var bank : Banco.Bank.values()) {
+			Thread.ofPlatform().start(()->{});
+		}
+	}
+}

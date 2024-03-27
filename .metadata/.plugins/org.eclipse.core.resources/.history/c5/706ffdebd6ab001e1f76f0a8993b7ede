@@ -1,0 +1,17 @@
+package fr.uge.exam.exo1;
+
+public class SackMain {
+
+	public static void main(String[] args) {
+		var sack = new Sack(500);
+		Thread.ofPlatform().start(()->{
+			try {
+				Thread.sleep(100);
+				sack.putGift(10);
+				sack.putGift(5);
+			} catch (InterruptedException e) {
+				throw new AssertionError(e);
+			}
+		});
+	}
+}

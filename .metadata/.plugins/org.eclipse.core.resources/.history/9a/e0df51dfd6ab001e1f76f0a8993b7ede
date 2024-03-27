@@ -1,0 +1,8 @@
+package fr.uge.exam.exo1;
+
+public class SackMain {
+
+	public static void main(String[] args) {
+		
+	}
+}

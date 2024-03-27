@@ -1,0 +1,60 @@
+package fr.uge.exam.exo2;
+
+import java.util.ArrayList;
+
+import fr.uge.exam.exo2.PokeAPI.Pokeball;
+import fr.uge.exam.exo2.PokeAPI.Pokemon;
+
+public class PokemonFactory {
+	public static void main(String[] args) {
+		int captureThread =5;
+		int possibleValue =11;
+		int putInCrate = 2;
+		var capture = new ArrayList<Pokemon>();
+		var trap = new ArrayList<Pokeball>();
+		for(var i = 0;i < captureThread; i++) {
+			Thread.ofPlatform().start(()->{
+				for(;;) {
+					try {
+						capture.add(PokeAPI.capture());
+					} catch (InterruptedException e) {
+						throw new AssertionError(e);
+					}
+				}
+			});
+		}
+		Thread.ofPlatform().start(()->{
+			for(;;){
+				if(capture.getFirst().rarity()!=5) {
+					try {
+						trap.add(PokeAPI.trap(capture.removeFirst()));
+					} catch (InterruptedException e) {
+						throw new AssertionError(e);
+					}
+				}
+			}
+		});
+		Thread.ofPlatform().start(()->{
+			for(;;){
+				if(capture.getFirst().rarity()==5) {
+					try {
+						trap.add(PokeAPI.trap(capture.removeFirst()));
+					} catch (InterruptedException e) {
+						throw new AssertionError(e);
+					}
+				}
+			}
+		});
+		for(var i=0;i< possibleValue;i++) {
+			for(var j = 0 ;j < putInCrate;j++) {
+				Thread.ofPlatform().start(()->{
+					var boxing = new ArrayList<Pokeball>();
+					var nbPokeball=0;
+					while(nbPokeball < 6) {
+						boxing.add(trap.removeFirst());
+					}
+				});
+			}
+		}
+	}
+}

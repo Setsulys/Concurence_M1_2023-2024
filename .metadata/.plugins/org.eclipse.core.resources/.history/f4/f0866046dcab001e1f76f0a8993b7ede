@@ -1,0 +1,32 @@
+package fr.uge.exam.exo2;
+
+import java.util.ArrayList;
+import java.util.concurrent.ArrayBlockingQueue;
+
+import fr.uge.exam.exo2.PokeAPI.Pokemon;
+
+public class PokemonFactory {
+	public static void main(String[] args) {
+		var capture = new ArrayList<Pokemon>();
+		var trap = new ArrayBlockingQueue<Pokemon>(6);
+		int captureThread =5;
+		for(var i = 0;i < captureThread; i++) {
+			Thread.ofPlatform().start(()->{
+				for(;;) {
+					try {
+						capture.add(PokeAPI.capture());
+					} catch (InterruptedException e) {
+						throw new AssertionError(e);
+					}
+				}
+			});
+		}
+		Thread.ofPlatform().start(()->{
+			for(;;){
+				if(capture.getFirst().rarity()!=5) {
+					
+				}
+			}
+		});
+	}
+}

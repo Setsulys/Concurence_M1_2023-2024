@@ -1,0 +1,11 @@
+package fr.uge.exam.exo1;
+
+public class Sack {
+
+	public Sack(int maxWeight) {
+		
+	}
+	public void putGift(int weight) {
+		
+	}
+}

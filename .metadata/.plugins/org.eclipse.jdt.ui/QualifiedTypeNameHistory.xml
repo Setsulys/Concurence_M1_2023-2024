@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthColorChooserUI"/>
+    <fullyQualifiedTypeName name="fr.uge.concurrence.exo2.Game.Move"/>
+    <fullyQualifiedTypeName name="fr.uge.exam.exo1.SackMain"/>
+    <fullyQualifiedTypeName name="fr.uge.exam.exo2.PokeAPI.Pokeball"/>
+    <fullyQualifiedTypeName name="fr.uge.exam.exo2.PokeAPI"/>
+    <fullyQualifiedTypeName name="java.lang.invoke.MethodHandle"/>
+    <fullyQualifiedTypeName name="java.lang.NoSuchFieldError"/>
+    <fullyQualifiedTypeName name="java.lang.NoSuchFieldException"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalAccessException"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="javax.print.attribute.standard.PrinterURI"/>
+    <fullyQualifiedTypeName name="java.nio.channels.IllegalSelectorException"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
+    <fullyQualifiedTypeName name="fr.uge.exo3.Banco.Bank"/>
+    <fullyQualifiedTypeName name="fr.uge.exo3.Banco"/>
+    <fullyQualifiedTypeName name="java.lang.AssertionError"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.ArrayBlockingQueue"/>
+    <fullyQualifiedTypeName name="fr.uge.exo3.Banco.WireTransfer"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collector.Characteristics"/>
+    <fullyQualifiedTypeName name="java.lang.InternalError"/>
+    <fullyQualifiedTypeName name="java.nio.channels.InterruptedByTimeoutException"/>
+    <fullyQualifiedTypeName name="fr.uge.exam.exo3.MaxRecorderOne"/>
+    <fullyQualifiedTypeName name="fr.uge.exam.exo3.MaxRecorderLockFree"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.atomic.AtomicIntegerArray"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalAccessError"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+</qualifiedTypeNameHistroy>

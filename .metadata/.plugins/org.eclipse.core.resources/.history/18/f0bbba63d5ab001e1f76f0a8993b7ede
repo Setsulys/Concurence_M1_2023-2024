@@ -1,0 +1,20 @@
+package fr.uge.exam.exo1;
+
+public class Sack {
+
+	private int maxWeight;
+	public Sack(int maxWeight) {
+		if(maxWeight <0) {
+			throw new IllegalArgumentException();
+		}
+		this.maxWeight= maxWeight;
+	}
+	public void putGift(int weight) {
+		
+	}
+	
+	
+	public int takeGift() {
+		return 0;
+	}
+}

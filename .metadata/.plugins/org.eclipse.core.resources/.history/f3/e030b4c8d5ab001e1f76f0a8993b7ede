@@ -1,0 +1,26 @@
+package fr.uge.exam.exo1;
+
+import java.util.ArrayList;
+
+public class Sack {
+
+	private int maxWeight;
+	private final ArrayList<Integer> hotte;
+	private Object lock = new Object();
+	
+	public Sack(int maxWeight) {
+		if(maxWeight <0) {
+			throw new IllegalArgumentException();
+		}
+		this.maxWeight= maxWeight;
+		this.hotte = new ArrayList<>();
+	}
+	public void putGift(int weight) {
+		
+	}
+	
+	
+	public int takeGift() {
+		return 0;
+	}
+}
